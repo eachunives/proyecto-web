@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Colaborativo GitHub</title>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .git-version {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        
+        .nav {
+            background: var(--accent-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            color: white;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .feature-card {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .team-section {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        
+        .commit-history {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .commit-item {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .footer {
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Proyecto Colaborativo GitHub</h1>
+        <p>Trabajo en equipo usando Git</p>
+        <div class="git-version">Git v2.51.1.Windows.1</div>
+    </header>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyecto">Proyecto</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#commits">Commits</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero" id="inicio">
+        <h2>Control de Versiones Colaborativo</h2>
+        <p>Implementando mejores prácticas con Git</p>
+    </section>
+    
+    <section class="features" id="proyecto">
+        <div class="feature-card">
+            <h3>Git 2.51.1</h3>
+            <p>Utilizando la última versión estable con mejoras de rendimiento y seguridad</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>Workflow Colaborativo</h3>
+            <p>Branching strategy, Pull Requests y Code Review entre equipo</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>Documentación</h3>
+            <p>Registro detallado de cada commit y cambio realizado</p>
+        </div>
+    </section>
+    
+    <section class="team-section" id="equipo">
+        <h2>Equipo de Desarrollo</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Emmanuel Arias</h3>
+                <p><strong>Líder del Proyecto</strong></p>
+                <p>Coordinación general e integración de cambios</p>                
+            </div>
+            
+            <div class="team-member">
+                <h3>Leonardo Macias</h3>
+                <p><strong>Diseñador Web</strong></p>
+                <p>HTML5, CSS3 y estructura web</p>
+            </div>
+                        
+        </div>
+    </section>
+    
+    <section class="commit-history" id="commits">
+        <h2 style="text-align: center; margin-bottom: 2rem;">📋 Historial de Commits Documentado</h2>
+        
+        <div class="commit-item">
+            <h4>Commit 1: Instalación inicial del proyecto</h4>
+            <p><strong>Autor:</strong> Emmanuel Arias</p>
+            <p><strong>Descripción:</strong> Estructura inicial del proyecto con Git</p>
+        </div>
+        
+        <div class="commit-item">
+            <h4>Commit 2: Agregar navegación responsiva</h4>
+            <p><strong>Autor:</strong> Leonardo Macias</p>
+            <p><strong>Descripción:</strong> Menú de navegación responsive con efectos hover</p>
+        </div>
+        
+        <div class="commit-item">
+            <h4>Commit 3: Implementar características modernas de CSS</h4>
+            <p><strong>Autor:</strong> Emmanuel Arias</p>
+            <p><strong>Descripción:</strong> Variables CSS, grid layout y diseño moderno</p>
+        </div>
+        
+        <div class="commit-item">
+            <h4>Commit 4: Agrregar sección de equipo y documentación de commits</h4>
+            <p><strong>Autor:</strong> Leonardo Macias</p>
+            <p><strong>Descripción:</strong> Sección de equipo y documentación de commits</p>
+        </div>
+    </section>
+    
+    <footer class="footer" id="contacto">
+        <p>&copy; 2025 Proyecto Colaborativo GitHub - Git</p>
+        <p>UNIVES Universidad Virtual - Producto de desarrollo de software I.</p>
+        <p style="margin-top: 1rem;">Repositorio: https://github.com/eachunives/proyecto-web</p>
+    </footer>
+</body>
+</html>
