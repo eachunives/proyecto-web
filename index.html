@@ -5,20 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Colaborativo GitHub</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #2c3e50;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
         }
         
         .header {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
         
+        .git-version {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
         .nav {
             background: #34495e;
             padding: 1rem 0;
@@ -53,62 +79,94 @@
         
         .hero {
             text-align: center;
-            padding: 3rem 2rem;
-            background: #3498db;
+            padding: 6rem 2rem;
             color: white;
         }
         
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
         .features {
-            display: block;
-            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
             background: white;
         }
         
         .feature-card {
-            background: #ecf0f1;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 5px;
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .team-section {
-            padding: 2rem;
-            background: #ecf0f1;
+            padding: 5rem 2rem;
+            background: var(--light-bg);
             text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .team-member {
             background: white;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 5px;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: scale(1.05);
         }
         
         .commit-history {
             background: white;
-            padding: 2rem;
+            padding: 4rem 2rem;
         }
         
         .commit-item {
-            background: #f8f9fa;
-            padding: 1rem;
+            background: var(--light-bg);
+            padding: 1.5rem;
             margin: 1rem 0;
-            border-radius: 5px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
         }
         
         .footer {
-            background: #2c3e50;
+            background: var(--accent-color);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
         }
-
+        
         @media (max-width: 768px) {
-         .nav ul {
-           flex-direction: column;
-           gap: 0.5rem;
+            .nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
         }
-      }
 
     </style>
 </head>
@@ -116,6 +174,7 @@
     <header class="header">
         <h1>Proyecto Colaborativo GitHub</h1>
         <p>Trabajo en equipo usando Git</p>
+        <div class="git-version">Git v2.51.1.Windows.1</div>
     </header>
     
     <nav class="nav">
